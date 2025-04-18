@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Circle Face</title>
+  <style>
+    body {
+      background: #8deaff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .circle-face {
+      width: 200px;
+      height: 200px;
+      background: #ffcad4;
+      border-radius: 50%;
+      position: relative;
+      box-shadow: inset -10px -10px 0 #f8a5c2;
+    }
+    .eye {
+      width: 30px;
+      height: 30px;
+      background: white;
+      border-radius: 50%;
+      position: absolute;
+      top: 60px;
+      border: 2px solid #333;
+    }
+    .eye.left {
+      left: 40px;
+    }
+    .eye.right {
+      right: 40px;
+    }
+    .pupil {
+      width: 12px;
+      height: 12px;
+      background: #000;
+      border-radius: 50%;
+      position: absolute;
+      top: 9px;
+      left: 9px;
+    }
+    .smile {
+      width: 80px;
+      height: 40px;
+      border: 5px solid #333;
+      border-top: none;
+      border-radius: 0 0 40px 40px;
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  </style>
+</head>
+<body>
+  <div class="circle-face">
+    <div class="eye left"><div class="pupil"></div></div>
+    <div class="eye right"><div class="pupil"></div></div>
+    <div class="smile"></div>
+  </div>
+</body>
+</html>

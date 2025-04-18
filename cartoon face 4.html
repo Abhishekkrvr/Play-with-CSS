@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Baby Face</title>
+  <style>
+    body {
+      background: #cce3de;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .baby-face {
+      width: 160px;
+      height: 160px;
+      background: #f8edeb;
+      border-radius: 50%;
+      position: relative;
+      box-shadow: 0 0 0 6px #fae1dd;
+    }
+    .eye {
+      width: 20px;
+      height: 20px;
+      background: #000;
+      border-radius: 50%;
+      position: absolute;
+      top: 60px;
+    }
+    .eye.left { left: 35px; }
+    .eye.right { right: 35px; }
+
+    .mouth {
+      width: 25px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ff6b6b;
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .hair {
+      width: 30px;
+      height: 30px;
+      border-top: 4px solid #000;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-radius: 50%;
+      position: absolute;
+      top: -10px;
+      left: 65px;
+    }
+  </style>
+</head>
+<body>
+  <div class="baby-face">
+    <div class="hair"></div>
+    <div class="eye left"></div>
+    <div class="eye right"></div>
+    <div class="mouth"></div>
+  </div>
+</body>
+</html>

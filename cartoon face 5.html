@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nerdy Face</title>
+  <style>
+    body {
+      background: #e0fbfc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .nerdy {
+      width: 180px;
+      height: 180px;
+      background: #ffdab9;
+      border-radius: 50%;
+      position: relative;
+    }
+    .eye {
+      width: 25px;
+      height: 25px;
+      background: white;
+      border: 3px solid #000;
+      border-radius: 50%;
+      position: absolute;
+      top: 60px;
+    }
+    .eye.left { left: 40px; }
+    .eye.right { right: 40px; }
+
+    .pupil {
+      width: 10px;
+      height: 10px;
+      background: #000;
+      border-radius: 50%;
+      position: absolute;
+      top: 7px;
+      left: 7px;
+    }
+
+    .glasses {
+      width: 140px;
+      height: 30px;
+      border: 3px solid #000;
+      border-radius: 15px;
+      position: absolute;
+      top: 57px;
+      left: 20px;
+      z-index: 1;
+    }
+
+    .bridge {
+      width: 10px;
+      height: 3px;
+      background: #000;
+      position: absolute;
+      top: 72px;
+      left: 85px;
+      z-index: 2;
+    }
+
+    .smile {
+      width: 60px;
+      height: 30px;
+      border-bottom: 4px solid #000;
+      border-radius: 0 0 50px 50px;
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  </style>
+</head>
+<body>
+  <div class="nerdy">
+    <div class="glasses"></div>
+    <div class="bridge"></div>
+    <div class="eye left"><div class="pupil"></div></div>
+    <div class="eye right"><div class="pupil"></div></div>
+    <div class="smile"></div>
+  </div>
+</body>
+</html>

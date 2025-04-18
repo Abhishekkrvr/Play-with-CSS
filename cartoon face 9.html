@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #87CEEB;
+        }
+
+        .face {
+            width: 400px;
+            height: 400px;
+            background: #FFE082;
+            border-radius: 50%;
+            position: relative;
+            box-shadow: 0 0 40px rgba(0,0,0,0.2);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Expressive Eyes */
+        .eyes {
+            display: flex;
+            justify-content: space-around;
+            padding: 80px 40px 0;
+        }
+
+        .eye {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .eyelid {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #FFE082;
+            animation: blink 4s infinite;
+        }
+
+        .pupil {
+            width: 35px;
+            height: 35px;
+            background: #311B92;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.3s ease;
+        }
+
+        .eye:hover .pupil {
+            transform: translate(-50%, -50%) scale(1.2);
+        }
+
+        /* Detailed Mouth */
+        .mouth {
+            position: absolute;
+            width: 180px;
+            height: 80px;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            overflow: hidden;
+        }
+
+        .mouth-inner {
+            width: 100%;
+            height: 100%;
+            border: 6px solid #E53935;
+            border-radius: 0 0 100px 100px;
+            border-top: none;
+            position: relative;
+            animation: smile 2s ease-in-out infinite alternate;
+        }
+
+        .tongue {
+            position: absolute;
+            width: 100%;
+            height: 50%;
+            background: #FF8A80;
+            border-radius: 0 0 80px 80px;
+            bottom: -10%;
+            animation: tongue 2s ease-in-out infinite alternate;
+        }
+
+        /* Cheeks and Details */
+        .cheeks {
+            position: absolute;
+            width: 100%;
+            top: 240px;
+            display: flex;
+            justify-content: space-around;
+            padding: 0 30px;
+        }
+
+        .cheek {
+            width: 60px;
+            height: 60px;
+            background: #FF8A80;
+            border-radius: 50%;
+            opacity: 0.4;
+            animation: blush 2s infinite;
+        }
+
+        /* Hair Style */
+        .hair {
+            position: absolute;
+            width: 120%;
+            height: 120px;
+            background: #5D4037;
+            top: -60px;
+            left: -10%;
+            border-radius: 50% 50% 0 0;
+            transform: rotate(2deg);
+        }
+
+        .hair::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 60px;
+            background: #5D4037;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 20px;
+        }
+
+        /* Animated Bow */
+        .bow {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: #E53935;
+            top: -30px;
+            right: -30px;
+            border-radius: 50%;
+            transform: rotate(45deg);
+            animation: bow 2s ease-in-out infinite;
+        }
+
+        .bow::before,
+        .bow::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: #E53935;
+            border-radius: 50%;
+        }
+
+        .bow::before { top: -30px; left: 10px; }
+        .bow::after { bottom: -30px; right: 10px; }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes blink {
+            0%, 90%, 100% { height: 0; }
+            95% { height: 80px; }
+        }
+
+        @keyframes smile {
+            0% { transform: translateX(-50%) scaleY(0.8); }
+            100% { transform: translateX(-50%) scaleY(1); }
+        }
+
+        @keyframes tongue {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
+        }
+
+        @keyframes blush {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+
+        @keyframes bow {
+            0%, 100% { transform: rotate(45deg); }
+            50% { transform: rotate(35deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="face">
+            <div class="hair"></div>
+            <div class="bow"></div>
+            <div class="eyes">
+                <div class="eye">
+                    <div class="eyelid"></div>
+                    <div class="pupil"></div>
+                </div>
+                <div class="eye">
+                    <div class="eyelid"></div>
+                    <div class="pupil"></div>
+                </div>
+            </div>
+            <div class="cheeks">
+                <div class="cheek"></div>
+                <div class="cheek"></div>
+            </div>
+            <div class="mouth">
+                <div class="mouth-inner">
+                    <div class="tongue"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
